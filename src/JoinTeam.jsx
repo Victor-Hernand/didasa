@@ -1,14 +1,17 @@
 import { useState } from 'react'
 import SiteHeader from './components/SiteHeader.jsx'
 import WhatsAppWidget from './components/WhatsAppWidget.jsx'
+import PrivacyNotices from './components/PrivacyNotices.jsx'
 import { socialLinks } from './socialLinks.js'
 
 function JoinTeam({ path }) {
   const [fileName, setFileName] = useState('')
   const [sent, setSent] = useState(false)
+  const [acceptedTerms, setAcceptedTerms] = useState(false)
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    if (!acceptedTerms) return
     setSent(true)
   }
 
@@ -30,6 +33,11 @@ function JoinTeam({ path }) {
               <span className="join-team-line" />
               <h2>Construye tu futuro<br /><em>con nosotros.</em></h2>
               <p>Buscamos personas comprometidas, responsables y apasionadas por el servicio automotriz. Cuéntanos sobre ti y el puesto que te interesa.</p>
+              <ol className="join-team-steps">
+                <li><span>1</span><div><strong>Completa tus datos</strong><small>Información de contacto y el puesto que buscas.</small></div></li>
+                <li><span>2</span><div><strong>Sube tu currículum</strong><small>PDF, DOC, DOCX o imagen de hasta 4.77 MB.</small></div></li>
+                <li><span>3</span><div><strong>Acepta los términos</strong><small>Revisa la política de privacidad antes de enviar.</small></div></li>
+              </ol>
             </div>
 
             <form className="join-team-form" onSubmit={handleSubmit}>
@@ -51,16 +59,24 @@ function JoinTeam({ path }) {
                     <label>Ciudad*<input required name="ciudad" type="text" placeholder="Escribe aquí" /></label>
                     <label>Número de DNI*<input required name="dni" type="text" placeholder="Escribe aquí" /></label>
                     <label className="join-team-full">¿Por qué quiere trabajar con nosotros?*<textarea required name="motivo" placeholder="Escribe aquí" rows="4" /></label>
-                    <label>Dirección*<input required name="direccion" type="text" placeholder="Escribe aquí" /></label>
+                    <label className="join-team-wide">Dirección*<input required name="direccion" type="text" placeholder="Escribe aquí" /></label>
                     <label>Seleccione el puesto que está optando*<select required name="puesto" defaultValue=""><option value="" disabled>Seleccionar</option><option>Mecánico automotriz</option><option>Asesor de servicio</option><option>Auxiliar de taller</option><option>Otro puesto</option></select></label>
                   </div>
                   <div className="join-team-upload"><h3>Subir Curriculum</h3><label className="join-team-dropzone"><input required type="file" accept=".gif,.jpeg,.png,.jpg,.doc,.docx,.pdf" onChange={(event) => setFileName(event.target.files?.[0]?.name || '')} /><span className="join-team-upload-icon">↑</span><strong>{fileName || 'Arrastrá el archivo hasta acá'}</strong><small>Tamaño máximo: 4.77 MB · Archivos permitidos: gif, jpeg, png, jpg, doc, docx, pdf</small><span className="join-team-file-button">Seleccionar archivo</span></label></div>
-                  <button className="join-team-submit" type="submit">Enviar solicitud <span>→</span></button>
+                  <div className="join-team-actions">
+                    <label className="join-team-terms">
+                      <input required type="checkbox" checked={acceptedTerms} onChange={(event) => setAcceptedTerms(event.target.checked)} />
+                      <span>He leído y acepto la <a href="/politica-de-privacidad">Política de Privacidad y Uso de Datos</a> de Grupo CAP, y autorizo el tratamiento de mis datos para evaluar mi postulación.</span>
+                    </label>
+                    <button className="join-team-submit" type="submit" disabled={!acceptedTerms}>Enviar solicitud <span>→</span></button>
+                  </div>
                 </>
               )}
             </form>
           </div>
         </section>
+
+        <PrivacyNotices />
 
         <section className="join-team-cta">
           <div className="join-team-cta-inner">
@@ -71,11 +87,17 @@ function JoinTeam({ path }) {
             </div>
             <div className="join-team-cta-links">
               <a href="https://recruit.capgrupo.com/aplicar" target="_blank" rel="noreferrer">
+                <span className="join-team-cta-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zm0 0v6h6M8 13h8M8 17h5" /></svg>
+                </span>
                 <strong>Aplicar en línea</strong>
                 <small>recruit.capgrupo.com/aplicar</small>
                 <span aria-hidden="true">→</span>
               </a>
               <a href="https://www.linkedin.com/company/caphn/posts/?feedView=all" target="_blank" rel="noreferrer">
+                <span className="join-team-cta-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 10v6M8 7.5v.01M12 16v-6m0 3a2.5 2.5 0 0 1 5 0v3" /></svg>
+                </span>
                 <strong>Vacantes en LinkedIn</strong>
                 <small>linkedin.com/company/caphn</small>
                 <span aria-hidden="true">→</span>
