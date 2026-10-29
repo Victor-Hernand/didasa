@@ -9,6 +9,7 @@ import Promos from './pages/Promos.jsx'
 import Repuestos from './pages/Repuestos.jsx'
 import ServicePage from './pages/ServicePage.jsx'
 import JoinTeam from './JoinTeam.jsx'
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
 import { services } from './pages/servicesData.js'
 import { handleInternalLinks, normalizePath, scrollToHashOnLoad } from './router.js'
 
@@ -21,6 +22,7 @@ const routes = {
   '/repuestos': { component: Repuestos, title: 'Repuestos - Tecnicentro DIDASA' },
   // Trae su propio header y footer, por eso se monta fuera de Layout.
   '/unete-al-equipo': { component: JoinTeam, title: 'Únete al Equipo - Tecnicentro DIDASA', standalone: true },
+  '/politica-de-privacidad': { component: PrivacyPolicy, title: 'Política de Privacidad - Tecnicentro DIDASA' },
 }
 
 // Las 7 páginas de servicio comparten plantilla y sólo cambian de contenido.
