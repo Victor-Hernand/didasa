@@ -14,9 +14,6 @@ function PrivacyNotices() {
         <div className="privacy-notices-intro">
           <span className="privacy-line" />
           <h2>Aviso de <em>privacidad</em></h2>
-          <p className="privacy-draft">
-            Borrador en revisión por Legal y Talento Humano. No publicar hasta que los campos entre corchetes estén confirmados.
-          </p>
           <p>
             Este aviso resume cómo tratamos sus datos personales en Grupo Empresarial CAP. La política completa explica el detalle y cómo ejercer sus derechos.
           </p>

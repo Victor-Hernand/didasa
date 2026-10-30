@@ -2,6 +2,7 @@ import { useState } from 'react'
 import SiteHeader from './components/SiteHeader.jsx'
 import WhatsAppWidget from './components/WhatsAppWidget.jsx'
 import PrivacyNotices from './components/PrivacyNotices.jsx'
+import PrivacyConsent from './components/PrivacyConsent.jsx'
 import { socialLinks } from './socialLinks.js'
 
 function JoinTeam({ path }) {
@@ -64,10 +65,7 @@ function JoinTeam({ path }) {
                   </div>
                   <div className="join-team-upload"><h3>Subir Curriculum</h3><label className="join-team-dropzone"><input required type="file" accept=".gif,.jpeg,.png,.jpg,.doc,.docx,.pdf" onChange={(event) => setFileName(event.target.files?.[0]?.name || '')} /><span className="join-team-upload-icon">↑</span><strong>{fileName || 'Arrastrá el archivo hasta acá'}</strong><small>Tamaño máximo: 4.77 MB · Archivos permitidos: gif, jpeg, png, jpg, doc, docx, pdf</small><span className="join-team-file-button">Seleccionar archivo</span></label></div>
                   <div className="join-team-actions">
-                    <label className="join-team-terms">
-                      <input required type="checkbox" checked={acceptedTerms} onChange={(event) => setAcceptedTerms(event.target.checked)} />
-                      <span>He leído y acepto la <a href="/politica-de-privacidad">Política de Privacidad y Uso de Datos</a> de Grupo CAP, y autorizo el tratamiento de mis datos para evaluar mi postulación.</span>
-                    </label>
+                    <PrivacyConsent checked={acceptedTerms} onChange={setAcceptedTerms} purpose="evaluar mi postulación" className="join-team-terms" />
                     <button className="join-team-submit" type="submit" disabled={!acceptedTerms}>Enviar solicitud <span>→</span></button>
                   </div>
                 </>

@@ -37,6 +37,25 @@
 .privacy-link { display: inline-block; margin-top: 16px; color: #e22522; font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 700; text-transform: uppercase; }
 .privacy-link:hover { text-decoration: underline; }
 .privacy-notices .privacy-updated { margin-top: 26px; }
+/* Casilla de aceptación de la política, compartida por los formularios de contacto, cotización y empleo */
+.privacy-consent { display: flex; align-items: flex-start; gap: 12px; width: 100%; margin: 0 0 18px; color: #555; font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 400; line-height: 1.6; cursor: pointer; }
+.privacy-consent input { width: 18px; height: 18px; flex: 0 0 18px; margin: 2px 0 0; padding: 0; accent-color: #e22522; cursor: pointer; }
+.privacy-consent a { color: #e22522; font-weight: 700; text-decoration: underline; }
+.privacy-consent-text { display: flex; flex-direction: column; gap: 4px; }
+.privacy-consent-lead strong { color: #0b1f2e; font-weight: 700; }
+.privacy-consent-purpose { color: #888; font-size: 12px; }
+/* Contáctenos tiene fondo oscuro */
+.page-contactenos .privacy-consent { color: rgba(255, 255, 255, .85); }
+.page-contactenos .privacy-consent a { color: #f2b632; }
+.page-contactenos .privacy-consent-lead strong { color: #fff; }
+.page-contactenos .privacy-consent-purpose { color: rgba(255, 255, 255, .7); }
+.page-contactenos .et_pb_contact_submit:disabled { opacity: .4; cursor: not-allowed; }
+.page-contactenos .et_pb_contact_submit:disabled:hover { background-color: rgba(255, 255, 255, 0) !important; }
+/* Cotizar: el botón deshabilitado se ve gris */
+.page-cotizar .privacy-consent { margin-bottom: 26px; padding: 0 18px; }
+.page-cotizar .ipt-form-submit:disabled { background: #c9ccd1; cursor: not-allowed; transform: none; }
+.page-cotizar .ipt-form-submit:disabled:hover { background: #c9ccd1; }
+
 /* Formulario Únete al equipo: dirección ocupa dos columnas y la casilla de términos */
 .join-team-form .join-team-wide { grid-column: span 2; }
 .join-team-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 20px; margin-top: 28px; }
