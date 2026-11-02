@@ -132,7 +132,6 @@ function PrivacyPolicy() {
     <div className="privacy-page">
       <section className="privacy-hero">
         <div className="privacy-inner">
-          <span className="privacy-kicker">Legal</span>
           <h1>Política de privacidad y uso de datos</h1>
           <p className="privacy-intro">
             Esta política explica qué datos personales recopilamos a través de capgrupo.com y del portal de reclutamiento CAP Recruit, para qué los usamos, con quién los compartimos y cómo puede ejercer sus derechos.

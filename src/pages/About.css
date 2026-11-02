@@ -20,7 +20,6 @@
   margin-top: 10vw !important;
   padding: 80px 60px !important;
   background-color: #e22522;
-  box-shadow: 6px 28px 40px 0 rgba(0, 0, 0, 0.1);
 }
 
 .page-nosotros .et_pb_text_0 h1 {
@@ -100,7 +99,7 @@
 
 .page-nosotros .et_pb_video,
 .page-nosotros .foto-taller .et_pb_image_wrap {
-  box-shadow: 6px 28px 40px 0 rgba(0, 0, 0, 0.1);
+
 }
 
 /* ------------------------------------------------------- portada de los videos */
@@ -146,7 +145,6 @@
   margin: -34px 0 0 -34px;
   border-radius: 50%;
   background: #e22522;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
   transition: transform 300ms ease;
 }
 
@@ -263,7 +261,7 @@
   height: 2px;
   margin-top: -1px;
   transform-origin: 0 50%;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04));
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .page-nosotros .rueda-centro {
@@ -324,9 +322,7 @@
   background: #1a1a1a;
   color: #fff;
   font-weight: 700;
-  text-transform: uppercase;
   font-size: clamp(9px, 2.2vw, 12px);
-  letter-spacing: 0.12em;
   line-height: 1.5;
   text-align: center;
   cursor: default;
@@ -344,7 +340,6 @@
 /* Al pasar el cursor el valor se eleva y se enciende en rojo, como un botón */
 .page-nosotros .rueda-valor:hover {
   background: #e22522;
-  box-shadow: 0 10px 24px rgba(226, 37, 34, 0.35);
   transform: translate(-50%, -50%) scale(1.08);
 }
 
@@ -398,7 +393,6 @@
   max-width: 560px;
   height: auto;
   border-radius: 12px;
-  box-shadow: 0 16px 40px rgba(26, 26, 26, 0.18);
 }
 @media only screen and (max-width: 980px) {
   .page-nosotros .et_pb_section_0 > .et_pb_row { flex-direction: column; }
@@ -427,7 +421,6 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 14px 34px rgba(26, 26, 26, 0.16);
 }
 
 /* Portada sin imagen: el bloque rojo ocupa el ancho y el texto va centrado */
@@ -450,7 +443,7 @@
 .page-nosotros .et_pb_section_0 > .et_pb_row { display: flex; align-items: center; gap: 48px; }
 .page-nosotros .et_pb_section_0 .about-hero-text { flex: 1 1 0; min-width: 0; width: auto; max-width: none; float: none; padding: 0; margin: 0; }
 .page-nosotros .et_pb_section_0 .about-hero-photo { flex: 1 1 0; min-width: 0; width: auto; float: none; padding: 0; margin: 0; }
-.page-nosotros .et_pb_section_0 .about-hero-photo img { display: block; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3); }
+.page-nosotros .et_pb_section_0 .about-hero-photo img { display: block; width: 100%; height: auto; border-radius: 12px; }
 .page-nosotros .et_pb_section_0 .et_pb_text_0 h1,
 .page-nosotros .et_pb_section_0 .et_pb_text_1 { text-align: left; }
 .page-nosotros .et_pb_section_0 .et_pb_text_1 p { text-align: left; }
@@ -488,12 +481,11 @@
   background: #fff;
   border-left: 6px solid #e22522;
   border-radius: 10px;
-  box-shadow: 0 10px 28px rgba(26, 26, 26, 0.08);
   transition: transform 250ms ease, box-shadow 250ms ease;
 }
-.page-nosotros .about-pilar:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(26, 26, 26, 0.14); }
+.page-nosotros .about-pilar:hover { transform: translateY(-4px); }
 .page-nosotros .about-pilar-numero { display: block; margin-bottom: 8px; color: #e22522; font-family: 'Khand', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 2px; }
-.page-nosotros .about-pilar h3 { margin: 0 0 12px; color: #1a1a1a; font-family: 'Khand', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.2; text-transform: uppercase; }
+.page-nosotros .about-pilar h3 { margin: 0 0 12px; color: #1a1a1a; font-family: 'Khand', sans-serif; font-size: 26px; font-weight: 700; line-height: 1.2; }
 .page-nosotros .about-pilar p { margin: 0; color: #444; font-size: 16px; line-height: 1.75; }
 @media only screen and (max-width: 980px) {
   .page-nosotros .about-historia-grid,
@@ -581,7 +573,6 @@
   background: #fff;
   border-top: 6px solid #e22522;
   border-radius: 10px;
-  box-shadow: 0 10px 28px rgba(26, 26, 26, 0.08);
 }
 .page-nosotros .about-mv-flag { display: block; width: 56px; height: 56px; margin-bottom: 18px; }
 .page-nosotros .about-mv-card h2 { margin: 0 0 12px; color: #1a1a1a; font-family: 'Khand', sans-serif; font-size: 34px; font-weight: 700; line-height: 1.1; text-transform: uppercase; }

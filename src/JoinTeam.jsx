@@ -17,12 +17,11 @@ function JoinTeam({ path }) {
   }
 
   return (
-    <div id="page-container" className="join-team-page">
+    <div id="page-container" className="join-team-page page-enter">
       <SiteHeader path={path} />
       <main className="join-team-main">
         <section className="join-team-hero">
           <div className="join-team-hero-inner">
-            <span className="join-team-kicker">Oportunidades DIDASA</span>
             <h1>Únete a nuestro equipo</h1>
             <p>Sé parte de nuestra familia. Ponte en contacto con nosotros llenando el siguiente formulario.</p>
           </div>

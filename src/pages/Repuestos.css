@@ -37,9 +37,7 @@
 
 .page-repuestos .et_pb_blurb .et_pb_module_header {
   font-weight: 700;
-  text-transform: uppercase;
   font-size: 16px;
-  letter-spacing: 2px;
   line-height: 1.2em;
 }
 
@@ -50,15 +48,12 @@
   background-image: linear-gradient(180deg, #e22522 0%, rgba(226, 37, 34, 0.79) 100%),
     url('/assets/mechanic-05.jpg');
   padding: 120px 80px 80px !important;
-  box-shadow: 6px 28px 40px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(180px);
 }
 
 .page-repuestos .et_pb_cta_0 .et_pb_promo_description div {
   font-weight: 700;
-  text-transform: uppercase;
   font-size: 16px;
-  letter-spacing: 3px;
   text-align: left;
   color: #fff;
 }
@@ -69,10 +64,8 @@
   color: #e22522 !important;
   border: 10px solid rgba(0, 0, 0, 0) !important;
   border-radius: 0;
-  letter-spacing: 3px;
   font-size: 14px;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
   padding-right: 2em;
   padding-left: 0.7em;
   background-color: #fff;
@@ -101,7 +94,6 @@
 }
 .page-repuestos .repuesto-card:hover {
   transform: translateX(8px);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
   background-color: #0b1f2e !important;
 }
 .page-repuestos .repuesto-icono { display: block; color: #e22522; transition: transform 300ms ease; }

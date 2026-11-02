@@ -2,7 +2,6 @@
 
 .privacy-inner { width: 80%; max-width: 980px; margin: 0 auto; }
 .privacy-line { width: 50px; height: 3px; display: block; background: #e22522; margin-bottom: 25px; }
-.privacy-kicker { color: #e22522; font-family: 'Rubik', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
 .privacy-draft { margin: 14px 0 0; padding: 10px 14px; border-left: 3px solid #f2b632; background: #fff8e6; color: #7a5a00; font-size: 13px; line-height: 1.6; }
 
 /* Página de política */
@@ -21,14 +20,14 @@
 .privacy-updated { margin-top: 40px; color: #888; font-size: 13px; }
 
 /* Bloque de avisos en Únete al equipo */
-.privacy-notices { padding: 80px 0 90px; background: #f2f4f7; border-top: 1px solid #e3e7ec; }
+.privacy-notices { padding: 80px 0 90px; background: #f2f4f7; }
 .privacy-notices-inner { width: 80%; max-width: 1080px; margin: 0 auto; }
 .privacy-notices-intro { max-width: 680px; margin-bottom: 40px; }
 .privacy-notices-intro h2 { margin: 0 0 16px; padding: 0; color: #0b1f2e; font-family: 'Khand', sans-serif; font-size: clamp(34px, 3.6vw, 50px); font-weight: 600; line-height: .98; text-transform: uppercase; }
 .privacy-notices-intro h2 em { color: #e22522; font-style: normal; }
 .privacy-notices-intro > p:last-child { color: #777; font-size: 15px; line-height: 1.8; }
 .privacy-notices-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-.privacy-card { padding: 26px 28px; border-top: 4px solid #e22522; background: #fff; box-shadow: 0 8px 30px rgba(11, 31, 46,.1); }
+.privacy-card { padding: 26px 28px; border-top: 4px solid #e22522; background: #fff; }
 .privacy-card h3 { margin: 0 0 12px; padding: 0; color: #0b1f2e; font-family: 'Rubik', sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; }
 .privacy-card p { margin: 0; color: #555; font-size: 13px; line-height: 1.75; }
 .privacy-card ul { margin: 0; padding-left: 18px; }
@@ -87,13 +86,13 @@
 .privacy-card-security .privacy-card-icon { background: rgba(242, 182, 50, .16); }
 .privacy-card-security .privacy-card-icon svg { stroke: #f2b632; }
 .privacy-card-link { background: #fff; }
-.privacy-card-link .privacy-link { margin-top: auto; align-self: flex-start; padding: 12px 20px; border-radius: 8px; background: #e22522; color: #fff; box-shadow: 0 8px 18px rgba(226, 37, 34, .25); transition: background-color .2s, transform .2s; }
+.privacy-card-link .privacy-link { margin-top: auto; align-self: flex-start; padding: 12px 20px; border-radius: 8px; background: #e22522; color: #fff; transition: background-color .2s, transform .2s; }
 .privacy-card-link .privacy-link:hover { background: #0b1f2e; transform: translateY(-2px); text-decoration: none; }
 .privacy-card-link p { margin-bottom: 18px; }
 .privacy-notices-grid .privacy-card { padding-bottom: 30px; }
 
 /* Bloque "Trabaja con nosotros": fondo oscuro, tarjetas con icono y hover */
-.join-team-cta { background: linear-gradient(120deg, #0b1f2e 0%, #13304a 100%); border-top: 0; padding: 90px 0 100px; position: relative; overflow: hidden; }
+.join-team-cta { background: #0b1f2e; border-top: 0; padding: 90px 0 100px; position: relative; overflow: hidden; }
 .join-team-cta::before { content: ''; position: absolute; right: -120px; top: -120px; width: 380px; height: 380px; border-radius: 50%; background: rgba(226, 37, 34, .12); pointer-events: none; }
 .join-team-cta-intro h2 { color: #fff; }
 .join-team-cta-intro p { color: rgba(255,255,255,.75); }
@@ -101,8 +100,8 @@
 .join-team-cta-intro p { max-width: 560px; }
 .join-team-cta-links { gap: 26px; }
 .join-team-cta-links strong { white-space: nowrap; }
-.join-team-cta-links a { display: flex; flex-direction: column; gap: 6px; padding: 30px 60px 30px 90px; border-top: 0; border-left: 4px solid #e22522; background: rgba(255,255,255,.06); border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,.25); backdrop-filter: blur(4px); }
-.join-team-cta-links a:hover { background: rgba(255,255,255,.12); box-shadow: 0 16px 40px rgba(0,0,0,.35); }
+.join-team-cta-links a { display: flex; flex-direction: column; gap: 6px; padding: 30px 60px 30px 90px; border-top: 0; border-left: 4px solid #e22522; background: rgba(255,255,255,.06); border-radius: 10px; }
+.join-team-cta-links a:hover { background: rgba(255,255,255,.12); }
 .join-team-cta-links strong { color: #fff; font-size: 18px; }
 .join-team-cta-links small { color: #f2b632; font-size: 13px; margin-top: 0; }
 .join-team-cta-links span[aria-hidden="true"]:not(.join-team-cta-icon) { top: 50%; right: 26px; width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; background: #e22522; color: #fff; font-size: 18px; transition: transform .2s; }
