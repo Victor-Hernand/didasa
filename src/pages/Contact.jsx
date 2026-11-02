@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './Contact.css'
 import BookedCalendar from '../components/BookedCalendar.jsx'
+import PrivacyConsent from '../components/PrivacyConsent.jsx'
 
 const ARROW = 'E'
 
@@ -28,11 +29,13 @@ function Contact() {
   const [values, setValues] = useState(emptyForm)
   const [error, setError] = useState('')
   const [sent, setSent] = useState(false)
+  const [acceptedPrivacy, setAcceptedPrivacy] = useState(false)
 
   const update = (field) => (event) => setValues((current) => ({ ...current, [field]: event.target.value }))
 
   const submit = (event) => {
     event.preventDefault()
+    if (!acceptedPrivacy) return
     if (Number(values.captcha) !== captcha.first + captcha.second) {
       setError('Has ingresado un número incorrecto en el captcha.')
       return
@@ -40,6 +43,7 @@ function Contact() {
     setError('')
     setSent(true)
     setValues(emptyForm)
+    setAcceptedPrivacy(false)
   }
 
   return (
@@ -183,6 +187,8 @@ function Contact() {
                     />
                   </p>
 
+                  <PrivacyConsent checked={acceptedPrivacy} onChange={setAcceptedPrivacy} className="page-contactenos-privacy" />
+
                   <div className="et_contact_bottom_container">
                     <div className="et_pb_contact_right">
                       <p className="clearfix">
@@ -202,7 +208,7 @@ function Contact() {
                         />
                       </p>
                     </div>
-                    <button type="submit" className="et_pb_contact_submit et_pb_button" data-icon={ARROW}>
+                    <button type="submit" className="et_pb_contact_submit et_pb_button" data-icon={ARROW} disabled={!acceptedPrivacy}>
                       Enviar
                     </button>
                   </div>

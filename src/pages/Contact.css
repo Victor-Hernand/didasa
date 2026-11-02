@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .page-contactenos div.et_pb_section.et_pb_section_0 {
-  background-image: linear-gradient(-67deg, #eaeaf1 20%, #ffffff 20%) !important;
+  background-image: none !important;
   background-color: #eaeaf1 !important;
   padding: 0 0 100px;
 }
@@ -163,10 +163,8 @@
   color: #fff !important;
   border: 2px solid #fff !important;
   border-radius: 0;
-  letter-spacing: 3px;
   font-size: 14px;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
   padding: 0.3em 2em 0.3em 0.7em;
   background-color: rgba(255, 255, 255, 0) !important;
   transition: background-color 300ms ease 0ms;
@@ -212,7 +210,6 @@
 
 .page-contactenos .et_pb_video { width: 100%; }
 
-.page-contactenos .et_pb_row_5 { box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.3); }
 
 .page-contactenos .et_pb_code_0 iframe {
   display: block;
@@ -256,7 +253,6 @@
   height: auto;
   border: 0;
   border-radius: 10px;
-  box-shadow: 0 12px 28px rgba(11, 31, 46, 0.14);
 }
 
 /* ------------------------------------------------------------------ móviles */
@@ -285,7 +281,6 @@
 /* Contacto: mejora visual general */
 .page-contactenos .et_pb_contact_form_container {
   border-radius: 14px;
-  box-shadow: 0 20px 44px rgba(11, 31, 46, 0.18);
   overflow: hidden;
 }
 .page-contactenos .et_pb_contact_form_container .et_pb_contact_form { padding: 36px 40px; }
@@ -303,15 +298,14 @@
   padding: 22px 18px;
   background: #fff;
   border-radius: 12px;
-  box-shadow: 0 10px 26px rgba(11, 31, 46, 0.1);
   transition: transform 250ms ease, box-shadow 250ms ease;
 }
-.page-contactenos .et_pb_row_1 .et_pb_blurb:hover { transform: translateY(-5px); box-shadow: 0 16px 34px rgba(11, 31, 46, 0.16); }
+.page-contactenos .et_pb_row_1 .et_pb_blurb:hover { transform: translateY(-5px); }
 
 /* Videos y mapa: contenedores con esquinas y fondo mientras cargan */
 .page-contactenos .contact-video { background: #0b1f2e; border-radius: 12px; overflow: hidden; }
 .page-contactenos .contact-video iframe { border-radius: 12px; }
-.page-contactenos .et_pb_code_0 { border-radius: 14px; overflow: hidden; box-shadow: 0 18px 40px rgba(11, 31, 46, 0.16); background: #e9edf2; }
+.page-contactenos .et_pb_code_0 { border-radius: 14px; overflow: hidden; background: #e9edf2; }
 .page-contactenos .et_pb_code_0 iframe { border-radius: 14px; }
 
 /* Cómo llegar: encabezado un poco más marcado */
@@ -346,7 +340,6 @@
   box-sizing: border-box;
   padding: 44px 46px 40px !important;
   border-radius: 16px;
-  box-shadow: 0 22px 50px rgba(11, 31, 46, 0.22);
 }
 .page-contactenos .et_pb_contact_main_title {
   margin: 0 0 30px;
@@ -356,9 +349,8 @@
 }
 .page-contactenos .et_pb_contact_form { display: flex; flex-wrap: wrap; gap: 16px 18px; }
 .page-contactenos .et_pb_contact_field_half { width: calc(50% - 9px) !important; margin: 0 !important; }
-.page-contactenos .et_pb_contact_field_half:nth-child(odd) { }
 .page-contactenos .et_pb_contact_form .et_pb_contact_field { width: 100% !important; margin: 0 !important; }
-.page-contactenos .et_pb_contact_form_label { font-size: 13px !important; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; opacity: 0.95; }
+.page-contactenos .et_pb_contact_form_label { font-size: 13px !important; font-weight: 700; opacity: 0.95; }
 .page-contactenos .et_pb_contact_form input,
 .page-contactenos .et_pb_contact_form textarea {
   background: rgba(255, 255, 255, 0.12) !important;
@@ -380,9 +372,7 @@
   border: 0 !important;
   border-radius: 8px;
   padding: 14px 36px !important;
-  letter-spacing: 2px;
   font-weight: 700;
-  text-transform: uppercase;
   transition: background-color 200ms ease, transform 200ms ease;
 }
 .page-contactenos .et_pb_contact_form_container .et_pb_contact_submit:hover { background: #fff !important; color: #e22522 !important; transform: translateY(-2px); }

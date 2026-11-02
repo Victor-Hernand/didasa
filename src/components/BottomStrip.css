@@ -14,7 +14,6 @@
 .didasa-strip .et_pb_row {
   max-width: 1360px;
   padding: 0 !important;
-  box-shadow: 6px 28px 40px 0 rgba(0, 0, 0, 0.1);
 }
 
 .didasa-strip .strip-col-red { background-color: #e22522; padding: 100px 40px; }
@@ -53,10 +52,8 @@
 .didasa-strip .et_pb_button {
   padding: 12px 40px 12px 24px !important;
   border-radius: 0;
-  letter-spacing: 3px;
   font-size: 14px;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
   transform: skewX(-20deg);
 }
 

@@ -5,7 +5,7 @@
 /* ============================================================ SECCIÓN 1: hero */
 
 .page-home div.et_pb_section.et_pb_section_1 {
-  background-image: linear-gradient(-67deg, #eaeaf1 18%, #ffffff 18%) !important;
+  background-image: none !important;
   background-color: #eaeaf1 !important;
   padding: 0;
 }
@@ -72,10 +72,8 @@
   color: #fff !important;
   border-width: 0 !important;
   border-radius: 0;
-  letter-spacing: 3px;
   font-size: 15px;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
   background-color: #e22522;
   padding: 18px 44px 18px 34px !important;
   filter: hue-rotate(11deg) saturate(200%) brightness(200%);
@@ -116,9 +114,7 @@
 
 .page-home .et_pb_section_2 .et_pb_blurb .et_pb_module_header {
   font-weight: 700;
-  text-transform: uppercase;
   font-size: 16px;
-  letter-spacing: 2px;
   line-height: 1.2em;
 }
 
@@ -163,8 +159,6 @@
   overflow: hidden;
   white-space: nowrap;
   padding: 18px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .page-home .services-ticker-track {
@@ -179,8 +173,8 @@
   font-family: 'Open Sans', Arial, sans-serif;
   font-weight: 700;
   font-size: 18px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+
+
   color: #fff;
 }
 
@@ -335,9 +329,7 @@
 
 .page-home .et_pb_section_4 .et_pb_blurb .et_pb_module_header {
   font-weight: 700;
-  text-transform: uppercase;
   font-size: 16px;
-  letter-spacing: 2px;
   line-height: 1.2em;
   padding-bottom: 0;
 }
@@ -349,15 +341,12 @@
   background-image: linear-gradient(180deg, #e22522 0%, rgba(226, 37, 34, 0.79) 100%),
     url('/assets/mechanic-05.jpg');
   padding: 120px 80px 80px !important;
-  box-shadow: 6px 28px 40px 0 rgba(0, 0, 0, 0.1);
   transform: translateY(180px);
 }
 
 .page-home .et_pb_cta_0 .et_pb_promo_description div {
   font-weight: 700;
-  text-transform: uppercase;
   font-size: 16px;
-  letter-spacing: 3px;
   text-align: left;
   color: #fff;
 }
@@ -366,10 +355,8 @@
   color: #e22522 !important;
   border: 10px solid rgba(0, 0, 0, 0) !important;
   border-radius: 0;
-  letter-spacing: 3px;
   font-size: 14px;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
   padding-right: 2em;
   padding-left: 0.7em;
   background-color: #fff;
@@ -407,10 +394,8 @@
   font-family: 'Advent Pro', Helvetica, Arial, Lucida, sans-serif;
   font-size: 33px;
   text-align: left;
-  text-shadow: 0.08em 0.08em 0 rgba(0, 0, 0, 0.4);
 }
 
-.page-home .et_pb_code_0 { box-shadow: 0 2px 18px 0 rgba(0, 0, 0, 0.3); }
 
 .page-home /* ============================================================ SECCIÓN 6: promos */
 
@@ -423,7 +408,6 @@ div.et_pb_section.et_pb_section_6 {
 .page-home .et_pb_row_7.et_pb_row {
   max-width: 1360px;
   padding: 0 !important;
-  box-shadow: 6px 28px 40px 0 rgba(0, 0, 0, 0.1);
 }
 
 .page-home .et_pb_column_17 { background-color: #e22522; padding: 60px 40px; }
@@ -473,10 +457,8 @@ div.et_pb_section.et_pb_section_6 {
   color: #fff !important;
   border: 2px solid #fff !important;
   border-radius: 0;
-  letter-spacing: 3px;
   font-size: 14px;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
   background-color: rgba(255, 255, 255, 0);
   transition: border 300ms ease 0ms;
 }
@@ -488,10 +470,8 @@ div.et_pb_section.et_pb_section_6 {
   color: #fff !important;
   border-width: 0 !important;
   border-radius: 0;
-  letter-spacing: 3px;
   font-size: 14px;
   font-weight: 700 !important;
-  text-transform: uppercase !important;
   background-color: #e22522;
   transform: skewX(-22deg);
   transition: background-color 300ms ease 0ms;
@@ -548,11 +528,9 @@ div.et_pb_section.et_pb_section_6 {
   background: #fff;
   border-top: 6px solid #e22522;
   border-radius: 10px;
-  box-shadow: 0 10px 28px rgba(11, 31, 46, 0.1);
   transition: transform 250ms ease, box-shadow 250ms ease;
 }
-.page-home .referido-paso:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(11, 31, 46, 0.18); }
-.page-home .referido-numero { position: absolute; top: 14px; right: 18px; color: #e22522; font-family: 'Khand', sans-serif; font-size: 18px; font-weight: 700; letter-spacing: 2px; }
+.page-home .referido-paso:hover { transform: translateY(-6px); }
 .page-home .referido-icono-wrap {
   display: flex;
   align-items: center;
@@ -560,9 +538,8 @@ div.et_pb_section.et_pb_section_6 {
   width: 72px;
   height: 72px;
   margin: 0 auto 18px;
-  background: linear-gradient(145deg, #e22522, #b71c19);
+  background: #e22522;
   border-radius: 50%;
-  box-shadow: 0 10px 22px rgba(226, 37, 34, 0.35);
   transition: transform 300ms ease;
 }
 .page-home .referido-paso:hover .referido-icono-wrap { transform: scale(1.08) rotate(-6deg); }
@@ -575,8 +552,8 @@ div.et_pb_section.et_pb_section_6 {
   color: #fff;
   background: #e22522;
   font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+
+
   border-radius: 6px;
   transition: background-color 250ms ease;
 }

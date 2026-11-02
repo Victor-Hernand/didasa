@@ -1,0 +1,94 @@
+/*
+ * Animaciones globales. Todo va dentro de prefers-reduced-motion: no-preference,
+ * así que quien tenga reducido el movimiento no ve nada de esto.
+ * Las animaciones de cada página siguen en su propio CSS.
+ */
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* 1. Entrada de cada página al cambiar de ruta (Layout la remonta con key={path}). */
+  @keyframes page-enter {
+    from { opacity: 0; translate: 0 12px; }
+    to { opacity: 1; translate: 0 0; }
+  }
+
+  .page-enter {
+    animation: page-enter 480ms var(--ease-out) backwards;
+  }
+
+  /* 2. Revelado al hacer scroll. Sólo con animation-timeline; en el resto el contenido es visible.
+   * Se excluye la sección superior (.et_pb_section_0) para no atenuar el hero al cargar. */
+  @supports (animation-timeline: view()) {
+    /* Sólo opacidad: mover texto con translate deja franjas fantasma en Chromium móvil. */
+    @keyframes reveal-up {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .et_pb_section:not(.et_pb_section_0) :is(
+      .et_pb_text,
+      .et_pb_button_module_wrapper,
+      .et_pb_divider,
+      .et_pb_code,
+      .et_pb_video,
+      .et_pb_contact_form_container,
+      .privacy-card
+    ) {
+      animation: reveal-up linear backwards;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+  }
+
+  /* 3. Botones: respuesta al presionar. */
+  .et_pb_button:active,
+  .privacy-card-link .privacy-link:active,
+  .wws-popup__open-btn:active {
+    transform: scale(0.97);
+  }
+
+  .privacy-card-link .privacy-link,
+  .wws-popup__open-btn {
+    transition: transform 160ms var(--ease-out), background-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  /* 4. Tarjetas y redes: elevación al pasar el cursor (sólo con puntero real). */
+  @media (hover: hover) and (pointer: fine) {
+    .privacy-card {
+      transition: transform 250ms var(--ease-out);
+    }
+
+    .privacy-card:hover {
+      transform: translateY(-3px);
+    }
+
+    #main-footer .et-social-icons a {
+      transition: transform 200ms var(--ease-out), color 200ms ease;
+    }
+
+    #main-footer .et-social-icons a:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  /* 5. Campos de formulario: el borde y la sombra cambian suavemente al enfocar. */
+  input:not([type='checkbox']):not([type='radio']),
+  textarea,
+  select {
+    transition: border-color 200ms ease, box-shadow 200ms ease;
+  }
+
+  /* 6. Entrada del botón de WhatsApp, con un pequeño retraso para no competir con la carga. */
+  @keyframes wws-enter {
+    from { opacity: 0; translate: 0 16px; }
+    to { opacity: 1; translate: 0 0; }
+  }
+
+  .wws-popup-container {
+    animation: wws-enter 500ms var(--ease-out) 900ms backwards;
+  }
+}

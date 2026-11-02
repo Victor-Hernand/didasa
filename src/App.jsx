@@ -12,6 +12,7 @@ import JoinTeam from './JoinTeam.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
 import { services } from './pages/servicesData.js'
 import { handleInternalLinks, normalizePath, scrollToHashOnLoad } from './router.js'
+import './mobile.css'
 
 const routes = {
   '/': { component: Home, title: 'Inicio - Tecnicentro DIDASA' },

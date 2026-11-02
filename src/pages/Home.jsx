@@ -318,7 +318,6 @@ function Home() {
           <p className="referidos-lead">Refiere a más clientes y obtén beneficios y descuentos.</p>
           <div className="referidos-pasos">
             <article className="referido-paso">
-              <span className="referido-numero">01</span>
               <span className="referido-icono-wrap">
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="referido-icono">
                   <circle cx="9" cy="8" r="3.5" />
@@ -329,7 +328,6 @@ function Home() {
               <p>Comparte tu experiencia con familiares, amigos o compañeros de trabajo.</p>
             </article>
             <article className="referido-paso">
-              <span className="referido-numero">02</span>
               <span className="referido-icono-wrap">
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="referido-icono">
                   <circle cx="12" cy="12" r="9" />
@@ -340,7 +338,6 @@ function Home() {
               <p>Tu referido agenda su cita o solicita su cotización con nosotros.</p>
             </article>
             <article className="referido-paso">
-              <span className="referido-numero">03</span>
               <span className="referido-icono-wrap">
                 <svg viewBox="0 0 24 24" aria-hidden="true" className="referido-icono">
                   <circle cx="12" cy="12" r="9" />
