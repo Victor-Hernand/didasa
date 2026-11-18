@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import './SiteHeader.css'
 import { normalizePath } from '../router.js'
-import { socialLinks } from '../socialLinks.js'
+
+const WHATSAPP_CITA =
+  'https://api.whatsapp.com/send?phone=50497049138&text=Hola%2C%20quisiera%20agendar%20una%20cita.'
 
 const menuItems = [
-  { label: 'Inicio', href: '/' },
   { label: 'Sobre Nosotros', href: '/sobre-nosotros/' },
   {
     label: 'Servicios',
@@ -21,12 +23,11 @@ const menuItems = [
   },
   { label: 'Promociones', href: '/promociones/' },
   { label: 'Cotizar', href: '/cotizar/' },
-  { label: 'Contáctenos', href: '/contactenos/' },
-  { label: 'Únete al Equipo', href: '/unete-al-equipo/' },
+  { label: 'Contacto', href: '/contactenos/' },
+  { label: 'Únete al equipo', href: '/unete-al-equipo/' },
 ]
 
 function SiteHeader({ path }) {
-  const [sticky, setSticky] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const isCurrent = (item) => {
@@ -34,169 +35,93 @@ function SiteHeader({ path }) {
     return Boolean(item.children?.some((child) => normalizePath(child.href) === path))
   }
 
-  useEffect(() => {
-    const onScroll = () => setSticky(window.scrollY > 80)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
-    <header className="et-l et-l--header">
-      <div className="et_pb_section et_pb_section_0_tb_header">
-        <div className="et_pb_row et_pb_row_0_tb_header et_pb_gutters1">
-          <div className="et_pb_column et_pb_column_1_4 et_pb_column_0_tb_header">
-            <div className="et_pb_module et_pb_blurb et_pb_blurb_0_tb_header et_pb_text_align_left et_pb_blurb_position_left">
-              <div className="et_pb_blurb_content">
-                <div className="et_pb_main_blurb_image">
-                  <span className="et_pb_image_wrap">
-                    <span className="et-pb-icon">&#xe00b;</span>
-                  </span>
-                </div>
-                <div className="et_pb_blurb_container">
-                  <h4 className="et_pb_module_header">Llamanos:</h4>
-                  <div className="et_pb_blurb_description">
-                    <p>
-                      <a href="tel:+50497049138">+504 97049138</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <header className="sh-header">
+      <div className="sh-topbar">
+        <div className="sh-container sh-topbar-inner">
+          <div className="sh-top-links">
+            <a href="tel:+50497049138">
+              Llámanos: <strong>+504 9704-9138</strong>
+            </a>
+            <a className="sh-email" href="mailto:tecdidasa@gmail.com">
+              tecdidasa@gmail.com
+            </a>
           </div>
+          <a className="sh-top-cta" href={WHATSAPP_CITA} target="_blank" rel="noopener">
+            Agenda tu visita <span className="sh-arrow">↗</span>
+          </a>
+        </div>
+      </div>
 
-          <div className="et_pb_column et_pb_column_1_4 et_pb_column_1_tb_header">
-            <div className="et_pb_module et_pb_blurb et_pb_blurb_1_tb_header et_pb_text_align_left et_pb_blurb_position_left">
-              <div className="et_pb_blurb_content">
-                <div className="et_pb_main_blurb_image">
-                  <span className="et_pb_image_wrap">
-                    <span className="et-pb-icon">&#xe010;</span>
-                  </span>
-                </div>
-                <div className="et_pb_blurb_container">
-                  <h4 className="et_pb_module_header">Contactar</h4>
-                  <div className="et_pb_blurb_description">
-                    <p>tecdidasa@gmail.com</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <nav className="sh-container sh-nav" aria-label="Navegación principal">
+        <a className="sh-brand" href="/" aria-label="Tecnicentro DIDASA, inicio">
+          <img src="/assets/didasa.png" alt="Logotipo de DIDASA" />
+          <span className="sh-brand-caption">
+            <b>TECNICENTRO DIDASA</b>
+            <span>Servicio automotriz integral</span>
+          </span>
+        </a>
 
-          <div className="et_pb_column et_pb_column_1_2 et_pb_column_2_tb_header et-last-child">
-            <div className="header-top-actions">
-              <ul className="header-social">
-                {socialLinks.map((red) => (
-                  <li key={red.title}>
-                    <a href={red.href} target="_blank" rel="noreferrer" aria-label={red.title}>
-                      <svg viewBox="0 0 24 24" aria-hidden="true">
-                        <path d={red.path} />
-                      </svg>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <div className="et_pb_button_module_wrapper et_pb_button_0_tb_header_wrapper et_pb_button_alignment_right et_pb_module">
-                <a
-                  className="et_pb_button et_pb_button_0_tb_header"
-                  href="https://api.whatsapp.com/send?phone=50497049138&text=Hola%2C%20quisiera%20agendar%20una%20cita."
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Haz una cita!
+        <ul className="sh-links">
+          {menuItems.map((item) => (
+            <li
+              key={item.label}
+              className={`sh-item${item.children ? ' sh-has-children' : ''}${isCurrent(item) ? ' sh-current' : ''}`}
+            >
+              <a href={item.href}>
+                {item.label}
+                {item.children && <span className="sh-chevron" aria-hidden="true">⌄</span>}
+              </a>
+              {item.children && (
+                <ul className="sh-sub">
+                  {item.children.map((child) => (
+                    <li key={child.label}>
+                      <a href={child.href}>{child.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+
+        <a className="sh-button" href={WHATSAPP_CITA} target="_blank" rel="noopener">
+          Reservar una cita <span className="sh-arrow">↗</span>
+        </a>
+
+        <button
+          type="button"
+          className="sh-toggle"
+          aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
+          aria-expanded={mobileOpen}
+          onClick={() => setMobileOpen((open) => !open)}
+        >
+          {mobileOpen ? '×' : '☰'}
+        </button>
+
+        {mobileOpen && (
+          <ul className="sh-mobile">
+            {menuItems.map((item) => (
+              <li key={item.label}>
+                <a href={item.href} onClick={() => setMobileOpen(false)}>
+                  {item.label}
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className={`et_pb_section et_pb_section_1_tb_header et_pb_section--with-menu${
-          sticky ? ' et_pb_sticky' : ''
-        }`}
-      >
-        <div className="et_pb_row et_pb_row_1_tb_header et_pb_gutters1 et_pb_row--with-menu">
-          <div className="et_pb_column et_pb_column_4_4 et_pb_column_3_tb_header et-last-child">
-            <div className="et_pb_module et_pb_menu et_pb_menu_0_tb_header et_pb_text_align_right">
-              <div className="et_pb_menu_inner_container">
-                <div className="et_pb_menu__logo-wrap">
-                  <div className="et_pb_menu__logo">
-                    <a href="/">
-                      <img src="/assets/didasa.png" alt="Tecnicentro DIDASA" id="logo" />
-                    </a>
-                  </div>
-                </div>
-
-                <div className="et_pb_menu__wrap">
-                  <div className="et_pb_menu__menu">
-                    <nav className="nav">
-                      <ul>
-                        {menuItems.map((item) => (
-                          <li
-                            key={item.label}
-                            className={`menu-item${isCurrent(item) ? ' current-menu-item' : ''}${
-                              item.children ? ' menu-item-has-children' : ''
-                            }`}
-                          >
-                            <a href={item.href}>{item.label}</a>
-                            {item.children && (
-                              <ul className="sub-menu">
-                                {item.children.map((child) => (
-                                  <li className="menu-item" key={child.label}>
-                                    <a href={child.href}>{child.label}</a>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </li>
-                        ))}
-                      </ul>
-                    </nav>
-                  </div>
-
-                  <div className="et_mobile_nav_menu">
-                    <button
-                      type="button"
-                      className="mobile_menu_bar"
-                      aria-label="Abrir menú"
-                      aria-expanded={mobileOpen}
-                      onClick={() => setMobileOpen((open) => !open)}
+                {item.children &&
+                  item.children.map((child) => (
+                    <a
+                      key={child.label}
+                      className="sh-mobile-child"
+                      href={child.href}
+                      onClick={() => setMobileOpen(false)}
                     >
-                      {mobileOpen ? '' : 'a'}
-                    </button>
-                  </div>
-                </div>
-
-                {mobileOpen && (
-                  <ul className="et_mobile_menu">
-                    {menuItems.map((item) => (
-                      <li
-                        key={item.label}
-                        className={`menu-item${isCurrent(item) ? ' current-menu-item' : ''}`}
-                      >
-                        <a href={item.href} onClick={() => setMobileOpen(false)}>
-                          {item.label}
-                        </a>
-                        {item.children && (
-                          <ul className="sub-menu">
-                            {item.children.map((child) => (
-                              <li className="menu-item" key={child.label}>
-                                <a href={child.href} onClick={() => setMobileOpen(false)}>
-                                  {child.label}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                      {child.label}
+                    </a>
+                  ))}
+              </li>
+            ))}
+          </ul>
+        )}
+      </nav>
     </header>
   )
 }

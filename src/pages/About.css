@@ -424,7 +424,7 @@
 }
 
 /* Portada sin imagen: el bloque rojo ocupa el ancho y el texto va centrado */
-.page-nosotros .et_pb_section_0.et_pb_section { background: #e22522 !important; padding: 90px 0 !important; }
+.page-nosotros .et_pb_section_0.et_pb_section { background: #000 !important; padding: 90px 0 !important; }
 .page-nosotros .et_pb_section_0 > .et_pb_row { justify-content: center; }
 .page-nosotros .et_pb_section_0 .et_pb_column_1 { width: 100%; max-width: 860px; margin: 0 auto; float: none; padding: 0; }
 .page-nosotros .et_pb_section_0 .et_pb_row_inner_0 { padding: 0 !important; background: transparent; }
@@ -499,8 +499,9 @@
 .page-nosotros .et_pb_section_0 .about-hero-text { align-self: center; }
 .page-nosotros .et_pb_section_0.et_pb_section { padding-bottom: 0 !important; }
 .page-nosotros .et_pb_section_0 .et_pb_text_1 p:last-child { margin-bottom: 0; }
+/* Texto alineado a la izquierda: al justificar, las líneas cortas dejaban espacios muy grandes */
 .page-nosotros .about-historia .about-lead,
-.page-nosotros .about-historia-body p { text-align: justify; text-justify: inter-word; }
+.page-nosotros .about-historia-body p { text-align: left; }
 
 /* Propuesta de valor: fondo rojo y cinta de pilares detenible con clic */
 .page-nosotros .about-propuesta { background: #e22522; overflow: hidden; }

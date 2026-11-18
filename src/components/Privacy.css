@@ -5,7 +5,7 @@
 .privacy-draft { margin: 14px 0 0; padding: 10px 14px; border-left: 3px solid #f2b632; background: #fff8e6; color: #7a5a00; font-size: 13px; line-height: 1.6; }
 
 /* Página de política */
-.privacy-hero { padding: 70px 0 40px; background: #0b1f2e; color: #fff; }
+.privacy-hero { padding: 70px 0 40px; background: #000; color: #fff; }
 .privacy-hero h1 { margin: 12px 0 0; padding: 0; color: #fff; font-family: 'Khand', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 600; line-height: 1; text-transform: uppercase; }
 .privacy-hero .privacy-draft { color: #7a5a00; }
 .privacy-intro { margin: 20px 0 0; color: rgba(255,255,255,.85); font-size: 15px; line-height: 1.8; }
@@ -73,7 +73,7 @@
 .join-team-steps small { display: block; margin-top: 4px; color: #888; font-size: 13px; line-height: 1.6; }
 
 /* Tarjeta de avisos de seguridad destacada y con viñetas */
-.privacy-card-security { background: #0b1f2e; border-top-color: #f2b632; }
+.privacy-card-security { background: #000; border-top-color: #f2b632; }
 .privacy-card-security h3 { color: #fff; }
 .privacy-card-security ul { list-style: none; padding-left: 0; }
 .privacy-card-security li { position: relative; padding-left: 26px; color: rgba(255,255,255,.88); }
@@ -92,7 +92,7 @@
 .privacy-notices-grid .privacy-card { padding-bottom: 30px; }
 
 /* Bloque "Trabaja con nosotros": fondo oscuro, tarjetas con icono y hover */
-.join-team-cta { background: #0b1f2e; border-top: 0; padding: 90px 0 100px; position: relative; overflow: hidden; }
+.join-team-cta { background: #000; border-top: 0; padding: 40px 0 40px; position: relative; overflow: hidden; }
 .join-team-cta::before { content: ''; position: absolute; right: -120px; top: -120px; width: 380px; height: 380px; border-radius: 50%; background: rgba(226, 37, 34, .12); pointer-events: none; }
 .join-team-cta-intro h2 { color: #fff; }
 .join-team-cta-intro p { color: rgba(255,255,255,.75); }
