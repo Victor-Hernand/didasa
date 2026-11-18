@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Quote.css'
+import PrivacyConsent from '../components/PrivacyConsent.jsx'
 
 const services = [
   'Mantenimiento Preventivo',
@@ -77,6 +78,7 @@ const emptyForm = {
 function Quote() {
   const [values, setValues] = useState(emptyForm)
   const [sent, setSent] = useState(false)
+  const [acceptedPrivacy, setAcceptedPrivacy] = useState(false)
 
   const update = (field) => (event) =>
     setValues((current) => ({ ...current, [field]: event.target.value }))
@@ -91,6 +93,7 @@ function Quote() {
 
   const submit = (event) => {
     event.preventDefault()
+    if (!acceptedPrivacy) return
     setSent(true)
   }
 
@@ -298,7 +301,8 @@ function Quote() {
                       </div>
 
                       <div className="ipt_fsqm_form_button_container">
-                        <button type="submit" className="ipt-form-submit" id="ipt_fsqm_form_5_button_submit">
+                        <PrivacyConsent checked={acceptedPrivacy} onChange={setAcceptedPrivacy} className="page-cotizar-privacy" />
+                        <button type="submit" className="ipt-form-submit" id="ipt_fsqm_form_5_button_submit" disabled={!acceptedPrivacy}>
                           Confirmar
                         </button>
                       </div>

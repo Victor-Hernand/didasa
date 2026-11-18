@@ -45,7 +45,7 @@ function WhatsAppWidget() {
               <div className="wws-popup__support-about">
                 Tienes alguna consulta? estamos listos para ayudarte.
               </div>
-              <div className="wws-popup__support-welcome">👋 Hola, como podemos ayudarte?</div>
+              <div className="wws-popup__support-welcome">Hola, ¿cómo podemos ayudarte?</div>
             </div>
           </div>
 

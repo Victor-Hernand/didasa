@@ -71,7 +71,6 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: 14px;
-  box-shadow: 0 18px 40px rgba(26, 26, 26, 0.2);
 }
 .page-servicio .et_pb_image_0 .et_parallax_bg_wrap { display: none; }
 .page-servicio .et_pb_column_1 { padding-right: 4%; }
@@ -99,10 +98,9 @@
   background: #fff;
   border-left: 5px solid #e22522;
   border-radius: 8px;
-  box-shadow: 0 8px 22px rgba(11, 31, 46, 0.08);
   transition: transform 250ms ease, box-shadow 250ms ease;
 }
-.page-servicio .servicio-item:hover { transform: translateX(6px); box-shadow: 0 12px 28px rgba(11, 31, 46, 0.14); }
+.page-servicio .servicio-item:hover { transform: translateX(6px); }
 .page-servicio .servicio-item .et_pb_text_inner { padding: 0; }
 .page-servicio .servicio-item ul { padding: 0; margin: 0; list-style: none; }
 .page-servicio .servicio-item li { position: relative; padding-left: 22px; line-height: 1.55em; }

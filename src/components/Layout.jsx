@@ -12,7 +12,7 @@ function Layout({ children, path }) {
           <article className="et_pb_post">
             <div className="entry-content">
               <div className="et-l et-l--post">
-                <div className="et_builder_inner_content">{children}</div>
+                <div className="et_builder_inner_content page-enter" key={path}>{children}</div>
               </div>
             </div>
           </article>

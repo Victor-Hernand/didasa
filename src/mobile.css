@@ -1,0 +1,99 @@
+/*
+ * Ajustes para celular (hasta 767px). Va al final del CSS de la app para ganar
+ * a las reglas de cada página; los valores !important sólo cubren texto justificado.
+ */
+
+@media only screen and (max-width: 767px) {
+  /* Texto justificado en columnas angostas deja huecos enormes entre palabras. */
+  .page-nosotros p,
+  .page-home .et_pb_text_9 p,
+  .page-home .services-split-text,
+  .didasa-strip .strip-address p,
+  .page-repuestos .et_pb_cta_0 .et_pb_promo_description p {
+    text-align: left !important;
+    text-justify: auto !important;
+  }
+
+  /* Intro de servicios: a 23px justificado ocupa toda la pantalla con huecos. */
+  .page-home .services-split-text {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  /* La rueda de valores es más ancha que el teléfono; se recorta en vez de mover la página. */
+  .page-nosotros {
+    overflow-x: clip;
+  }
+
+  /* Los íconos sociales miden 24px; el área tocable llega a 40px sin mover el diseño. */
+  #main-footer .et-social-icons a {
+    display: inline-block;
+    padding: 8px;
+    margin: -8px;
+  }
+
+  /* Etiquetas de la rueda: 9px es ilegible en una pantalla de celular. */
+  .page-nosotros .rueda-valor {
+    font-size: clamp(10px, 2.6vw, 12px);
+  }
+}
+
+/* Portada de Nosotros apilada: flex-basis 0 en vertical colapsaba el texto y la foto a 1px,
+ * y el texto blanco de la portada se pintaba encima de la sección de historia. */
+@media only screen and (max-width: 980px) {
+  .page-nosotros .et_pb_section_0 > .et_pb_row > .et_pb_column,
+  .page-nosotros .et_pb_section_0 .about-hero-text,
+  .page-nosotros .et_pb_section_0 .about-hero-photo {
+    flex: 0 0 auto;
+  }
+}
+
+/* Contacto apilado: las reglas de escritorio (márgenes negativos y padding de 140px en el formulario)
+ * dejaban el formulario en ~150px y las tarjetas de teléfono encima de él. */
+@media only screen and (max-width: 980px) {
+  /* flex-basis 0 en vertical colapsa las columnas a 1px y apila la fila de teléfonos sobre el formulario. */
+  .page-contactenos .et_pb_section_0 .et_pb_column_0,
+  .page-contactenos .et_pb_section_0 .et_pb_column_1 {
+    flex: 0 0 auto;
+    margin-left: 0 !important;
+  }
+
+  .page-contactenos .et_pb_row_0.et_pb_row {
+    width: 88%;
+    margin: 0 auto;
+  }
+
+  .page-contactenos .et_pb_section_0 .et_pb_column_1 {
+    padding: 0 !important;
+  }
+
+  .page-contactenos .et_pb_contact_form_container {
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+/* Teléfonos de contacto: en dos columnas de 147px el número se salía de la tarjeta.
+ * Una tarjeta por fila, con altura natural y el número sin cortes. */
+@media only screen and (max-width: 767px) {
+  .page-contactenos .et_pb_row_1 {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .page-contactenos .et_pb_row_1 > .et_pb_column {
+    flex: 1 1 100%;
+  }
+
+  .page-contactenos .et_pb_row_1 .et_pb_blurb {
+    height: auto;
+    padding: 18px 20px;
+    box-sizing: border-box;
+  }
+
+  .page-contactenos .et_pb_row_1 .et_pb_blurb .et_pb_module_header {
+    font-size: 22px !important;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
