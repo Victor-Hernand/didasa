@@ -43,9 +43,10 @@
   font-weight: 700;
   font-style: italic;
   text-transform: uppercase;
-  font-size: 6vw;
+  font-size: clamp(44px, 4.6vw, 84px);
   line-height: 1em;
   text-align: left;
+  white-space: nowrap;
 }
 
 .page-contactenos .et_pb_divider_1 {
@@ -214,7 +215,8 @@
 .page-contactenos .et_pb_code_0 iframe {
   display: block;
   width: 100%;
-  height: 450px;
+  height: 100%;
+  min-height: 460px;
   border: 0;
 }
 
@@ -305,7 +307,7 @@
 /* Videos y mapa: contenedores con esquinas y fondo mientras cargan */
 .page-contactenos .contact-video { background: #0b1f2e; border-radius: 12px; overflow: hidden; }
 .page-contactenos .contact-video iframe { border-radius: 12px; }
-.page-contactenos .et_pb_code_0 { border-radius: 14px; overflow: hidden; background: #e9edf2; }
+.page-contactenos .et_pb_code_0 { border-radius: 14px; overflow: hidden; background: #e9edf2; box-shadow: 0 16px 40px rgba(11, 31, 46, 0.14); }
 .page-contactenos .et_pb_code_0 iframe { border-radius: 14px; }
 
 /* Cómo llegar: encabezado un poco más marcado */
@@ -331,7 +333,9 @@
 .page-contactenos .et_pb_section_0 > .et_pb_row_0 { display: flex; align-items: stretch; gap: 40px; }
 .page-contactenos .et_pb_section_0 .et_pb_column_0,
 .page-contactenos .et_pb_section_0 .et_pb_column_1 { flex: 1 1 0; width: auto; min-width: 0; margin: 0; padding: 0; float: none; }
-.page-contactenos .et_pb_section_0 .et_pb_column_0 { padding: 40px 20px 40px 0; }
+.page-contactenos .et_pb_section_0 .et_pb_column_0 { padding: 28px 20px 40px 0; }
+/* La barra roja inclinada de arriba se oculta: solo dejaba un espacio vacío. */
+.page-contactenos .et_pb_divider_0 { display: none !important; }
 .page-contactenos .et_pb_section_0 .et_pb_column_1 { padding: 0; }
 
 /* Formulario: tarjeta más cuidada */
@@ -378,7 +382,9 @@
 .page-contactenos .et_pb_contact_form_container .et_pb_contact_submit:hover { background: #fff !important; color: #e22522 !important; transform: translateY(-2px); }
 @media only screen and (max-width: 980px) {
   .page-contactenos .et_pb_section_0 > .et_pb_row_0 { flex-direction: column; gap: 30px; }
-  .page-contactenos .et_pb_section_0 .et_pb_column_0 { padding: 20px 0; }
+  .page-contactenos .et_pb_section_0 .et_pb_column_0 { padding: 20px 0; margin-left: 0; width: 100%; box-sizing: border-box; }
+  .page-contactenos .et_pb_section_0 .et_pb_column_1 { width: 100%; box-sizing: border-box; }
+  .page-contactenos .et_pb_section_0 .et_pb_code_0 iframe { min-height: 380px; }
   .page-contactenos .et_pb_contact_form_container { padding: 30px 22px !important; }
   .page-contactenos .et_pb_contact_field_half { width: 100% !important; }
 }
@@ -418,8 +424,6 @@
 .page-contactenos .booked-calendar .bc-body .bc-col { min-height: 60px; }
 .page-contactenos .bc-cita-boton { padding: 16px 52px; }
 
-/* Formulario: tarjeta más pequeña y separada del borde de la pantalla */
-.page-contactenos .et_pb_section_0 .et_pb_column_1 { padding: 40px 60px 40px 0 !important; }
 .page-contactenos .et_pb_contact_form_container {
   height: auto !important;
   max-width: 480px;
@@ -431,4 +435,23 @@
 .page-contactenos .et_pb_contact_form input,
 .page-contactenos .et_pb_contact_form textarea { padding: 10px 12px; }
 .page-contactenos .et_pb_contact_form textarea { min-height: 96px; }
-.page-contactenos .et_pb_section_0 .et_pb_column_1 { padding-right: 140px !important; }
+/* Columna del mapa: ocupa la altura de la columna de información */
+.page-contactenos .et_pb_section_0 .et_pb_column_1 { padding: 40px 0 !important; }
+/* Teléfonos: misma anchura que la información y "Cómo llegar" */
+.page-contactenos .et_pb_row_1 {
+  width: min(92%, 1200px);
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 !important;
+}
+
+/* Misma anchura y eje que la sección "Cómo llegar" para que todo quede alineado */
+.page-contactenos .et_pb_section_0 > .et_pb_row_0.et_pb_row {
+  width: min(92%, 1200px);
+  max-width: none;
+  margin: 0 auto !important;
+}
+.page-contactenos .et_pb_section_0 .et_pb_column_0 { margin-left: 0; }
+.page-contactenos .et_pb_section_0 .et_pb_column_1 { min-width: 0; max-width: 100%; }
+.page-contactenos .et_pb_section_0 .et_pb_column_1 .et_pb_code_0,
+.page-contactenos .et_pb_section_0 .et_pb_column_1 .et_pb_code_inner { height: 100%; }
