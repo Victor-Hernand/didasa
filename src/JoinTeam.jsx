@@ -1,21 +1,9 @@
-import { useState } from 'react'
 import SiteHeader from './components/SiteHeader.jsx'
 import WhatsAppWidget from './components/WhatsAppWidget.jsx'
 import PrivacyNotices from './components/PrivacyNotices.jsx'
-import PrivacyConsent from './components/PrivacyConsent.jsx'
 import { socialLinks } from './socialLinks.js'
 
 function JoinTeam({ path }) {
-  const [fileName, setFileName] = useState('')
-  const [sent, setSent] = useState(false)
-  const [acceptedTerms, setAcceptedTerms] = useState(false)
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    if (!acceptedTerms) return
-    setSent(true)
-  }
-
   return (
     <div id="page-container" className="join-team-page page-enter">
       <SiteHeader path={path} />
@@ -23,57 +11,9 @@ function JoinTeam({ path }) {
         <section className="join-team-hero">
           <div className="join-team-hero-inner">
             <h1>Únete a nuestro equipo</h1>
-            <p>Sé parte de nuestra familia. Ponte en contacto con nosotros llenando el siguiente formulario.</p>
+            <p>Sé parte de nuestra familia. Revisa nuestras vacantes y aplica en línea.</p>
           </div>
         </section>
-
-        <section className="join-team-section">
-          <div className="join-team-content">
-            <div className="join-team-intro">
-              <span className="join-team-line" />
-              <h2>Construye tu futuro<br /><em>con nosotros.</em></h2>
-              <p>Buscamos personas comprometidas, responsables y apasionadas por el servicio automotriz. Cuéntanos sobre ti y el puesto que te interesa.</p>
-              <ol className="join-team-steps">
-                <li><span>1</span><div><strong>Completa tus datos</strong><small>Información de contacto y el puesto que buscas.</small></div></li>
-                <li><span>2</span><div><strong>Sube tu currículum</strong><small>PDF, DOC, DOCX o imagen de hasta 4.77 MB.</small></div></li>
-                <li><span>3</span><div><strong>Acepta los términos</strong><small>Revisa la política de privacidad antes de enviar.</small></div></li>
-              </ol>
-            </div>
-
-            <form className="join-team-form" onSubmit={handleSubmit}>
-              {sent ? (
-                <div className="join-team-success" role="status">
-                  <span className="join-team-check">✓</span>
-                  <h3>¡Gracias por contactarnos!</h3>
-                  <p>Recibimos tu información y revisaremos tu perfil.</p>
-                  <button type="button" onClick={() => setSent(false)}>Enviar otra solicitud</button>
-                </div>
-              ) : (
-                <>
-                  <div className="join-team-form-heading"><h3>Únete a nuestro equipo</h3><span>* Campos obligatorios</span></div>
-                  <div className="join-team-fields">
-                    <label>Nombre*<input required name="nombre" type="text" placeholder="Escribe aquí" /></label>
-                    <label>Apellido*<input required name="apellido" type="text" placeholder="Escribe aquí" /></label>
-                    <label>Correo electrónico*<input required name="correo" type="email" placeholder="Escribe aquí" /></label>
-                    <label>Teléfono*<input required name="telefono" type="tel" placeholder="Escribe aquí" /></label>
-                    <label>Ciudad*<input required name="ciudad" type="text" placeholder="Escribe aquí" /></label>
-                    <label>Número de DNI*<input required name="dni" type="text" placeholder="Escribe aquí" /></label>
-                    <label className="join-team-full">¿Por qué quiere trabajar con nosotros?*<textarea required name="motivo" placeholder="Escribe aquí" rows="4" /></label>
-                    <label className="join-team-wide">Dirección*<input required name="direccion" type="text" placeholder="Escribe aquí" /></label>
-                    <label>Seleccione el puesto que está optando*<select required name="puesto" defaultValue=""><option value="" disabled>Seleccionar</option><option>Mecánico automotriz</option><option>Asesor de servicio</option><option>Auxiliar de taller</option><option>Otro puesto</option></select></label>
-                  </div>
-                  <div className="join-team-upload"><h3>Subir Curriculum</h3><label className="join-team-dropzone"><input required type="file" accept=".gif,.jpeg,.png,.jpg,.doc,.docx,.pdf" onChange={(event) => setFileName(event.target.files?.[0]?.name || '')} /><span className="join-team-upload-icon">↑</span><strong>{fileName || 'Arrastrá el archivo hasta acá'}</strong><small>Tamaño máximo: 4.77 MB · Archivos permitidos: gif, jpeg, png, jpg, doc, docx, pdf</small><span className="join-team-file-button">Seleccionar archivo</span></label></div>
-                  <div className="join-team-actions">
-                    <PrivacyConsent checked={acceptedTerms} onChange={setAcceptedTerms} purpose="evaluar mi postulación" className="join-team-terms" />
-                    <button className="join-team-submit" type="submit" disabled={!acceptedTerms}>Enviar solicitud <span>→</span></button>
-                  </div>
-                </>
-              )}
-            </form>
-          </div>
-        </section>
-
-        <PrivacyNotices />
 
         <section className="join-team-cta">
           <div className="join-team-cta-inner">
@@ -81,6 +21,9 @@ function JoinTeam({ path }) {
               <span className="join-team-line" />
               <h2>Trabaja <em>con nosotros</em></h2>
               <p>También puedes aplicar a nuestras vacantes en línea o seguir nuestras publicaciones de empleo.</p>
+              <figure className="join-team-photo">
+                <img src="/assets/join-team-mecanico.jpg" alt="Mecánico de Tecnicentro DIDASA revisando la parte inferior de un vehículo" loading="lazy" />
+              </figure>
             </div>
             <div className="join-team-cta-links">
               <a href="https://recruit.capgrupo.com/aplicar" target="_blank" rel="noreferrer">
@@ -102,6 +45,9 @@ function JoinTeam({ path }) {
             </div>
           </div>
         </section>
+
+        <PrivacyNotices />
+
       </main>
       <footer className="join-team-footer"><div className="join-team-footer-inner"><img src="/assets/didasa.png" alt="Tecnicentro DIDASA" /><div>{socialLinks.map((red) => (<a key={red.title} href={red.href} target="_blank" rel="noreferrer" aria-label={red.title}><svg viewBox="0 0 24 24" aria-hidden="true"><path d={red.path} /></svg></a>))}</div><p>Copyright © tecdidasa.com</p></div></footer>
       <WhatsAppWidget />
